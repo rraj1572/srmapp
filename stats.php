@@ -16,6 +16,8 @@ function getVisitCount() {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="ic_icon.png">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
@@ -57,10 +59,18 @@ function getVisitCount() {
         button:hover {
             background-color: #0056b3;
         }
+.center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+}
+
     </style>
 </head>
 <body>
     <div class="container">
+<img src="ic_icon.png" widhth='200px' height = '200px' class="center"></img>
+
         <h1>Statistics</h1>
         <p>Number of downloads: <?php echo getDownloadCount(); ?></p>
         <p>Number of visits: <?php echo getVisitCount(); ?></p>
