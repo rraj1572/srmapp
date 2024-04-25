@@ -8,4 +8,10 @@ $downloadFile = 'download_count.txt';
 file_put_contents($downloadFile, 0);
 
 echo 'Counts have been reset successfully.';
+header('Location: stats.php');
+exit;
+
 ?>
+
+
+
