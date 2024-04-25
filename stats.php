@@ -83,8 +83,8 @@ file_put_contents($downloadFile, 0);
         <h1>Statistics</h1>
         <p>Number of downloads: <?php echo getDownloadCount(); ?></p>
         <p>Number of visits: <?php echo getVisitCount(); ?></p>
-        <form method="get" action="">
-            <button type="submit" name="reset">Reset Counts</button>
+        <form method="post" action="reset.php">
+            <button type="submit" name="download">Reset Counts</button>
         </form>
     </div>
 </body>
