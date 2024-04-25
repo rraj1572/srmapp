@@ -54,11 +54,18 @@ if (isset($_GET['download'])) {
     }
 }
 
-if (getVisitCount() > 20 && getDownloadCount() > 20) {
-    $showStatistics = true;
+if (getVisitCount() > 20) {
+    $showView = true;
 } else {
-    $showStatistics = false;
+    $showView = false;
 }
+
+if (getDownloadCount() > 20) {
+    $showDown = true;
+} else {
+    $showDown = false;
+}
+
 
 
 ?>
@@ -125,12 +132,18 @@ if (getVisitCount() > 20 && getDownloadCount() > 20) {
             <button type="submit" name="download">Download</button>
         </form>
         
-        <?php if ($showStatistics): ?>
+        <?php if ($showView): ?>
             <p>This page has been visited <?php echo getVisitCount(); ?> times.</p>
+        <?php else: ?>
+            <p></p>
+        <?php endif; ?>
+        <?php if ($showDown): ?>
+            
             <p>This file has been downloaded <?php echo getDownloadCount(); ?> times.</p>
         <?php else: ?>
             <p></p>
         <?php endif; ?>
+
 
 
     </div>
