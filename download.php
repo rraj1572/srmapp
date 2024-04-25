@@ -22,24 +22,6 @@ function startDownload() {
     header('Cache-Control: must-revalidate');
     header('Pragma: public');
     header('Content-Length: ' . filesize($filePath));
-    ob_clean();
-    flush();
-    sleep(2); // 2 second delay
-    echo "Download will start in 3..2..1";
-    ob_flush();
-    flush();
-    sleep(1);
-    echo "3..";
-    ob_flush();
-    flush();
-    sleep(1);
-    echo "2..";
-    ob_flush();
-    flush();
-    sleep(1);
-    echo "1..";
-    ob_flush();
-    flush();
     readfile($filePath);
     exit;
 }
