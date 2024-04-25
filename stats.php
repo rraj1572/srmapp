@@ -11,6 +11,15 @@ function getVisitCount() {
     return (int)file_get_contents($visitFile);
 }
 
+if (isset($_GET['reset'])) {
+$visitFile = 'visit_count.txt';
+file_put_contents($visitFile, 0);
+
+$downloadFile = 'download_count.txt';
+file_put_contents($downloadFile, 0);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -74,8 +83,8 @@ function getVisitCount() {
         <h1>Statistics</h1>
         <p>Number of downloads: <?php echo getDownloadCount(); ?></p>
         <p>Number of visits: <?php echo getVisitCount(); ?></p>
-        <form method="get" action="reset.php">
-            <button type="submit">Reset Counts</button>
+        <form method="get" action="">
+            <button type="submit" name="reset">Reset Counts</button>
         </form>
     </div>
 </body>
