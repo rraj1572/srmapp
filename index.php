@@ -88,6 +88,12 @@ if (isset($_GET['download'])) {
         button:hover {
             background-color: #0056b3;
         }
+.center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+}
+
     </style>
 </head>
 <body>
