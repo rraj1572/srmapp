@@ -47,6 +47,8 @@ if (isset($_GET['download'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" href="ic_icon.png">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SRM TRACKER</title>
