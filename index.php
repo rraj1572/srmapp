@@ -129,6 +129,8 @@ if (getVisitCount() > 20 && getDownloadCount() > 20) {
             <p>This page has been visited <?php echo getVisitCount(); ?> times.</p>
             <p>This file has been downloaded <?php echo getDownloadCount(); ?> times.</p>
         <?php else: ?>
+            <p></p>
+
     </div>
 </body>
 </html>
