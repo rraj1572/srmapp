@@ -11,7 +11,7 @@ function incrementDownloadCount() {
 }
 
 // Check if the file exists and download button is clicked
-if (file_exists($filePath) && isset($_GET['download'])) {
+if (file_exists($filePath)) {
     // Increment download count
     incrementDownloadCount();
 
