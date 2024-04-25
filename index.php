@@ -102,7 +102,7 @@ if (isset($_GET['download'])) {
     <div class="container">
     <img src="ic_icon.png" widhth='200px' height = '200px' class="center"></img>
         <h1>SRM TRACKER</h1>
-        <form method="get" action="">
+        <form method="post" action="download.php">
             <button type="submit" name="download">Download</button>
         </form>
         
