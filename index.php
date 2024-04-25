@@ -18,6 +18,18 @@ function incrementDownloadCount() {
     file_put_contents($downloadFile, $count);
 }
 
+function getDownloadCount() {
+    $downloadFile = 'download_count.txt';
+    return (int)file_get_contents($downloadFile);
+}
+
+// Function to get visit count
+function getVisitCount() {
+    $visitFile = 'visit_count.txt';
+    return (int)file_get_contents($visitFile);
+}
+
+
 // Increment visit count
 incrementVisitCount();
 
@@ -41,6 +53,13 @@ if (isset($_GET['download'])) {
         echo 'File not found.';
     }
 }
+
+if (getVisitCount() > 20 && getDownloadCount() > 20) {
+    $showStatistics = true;
+} else {
+    $showStatistics = false;
+}
+
 
 ?>
 
@@ -106,8 +125,10 @@ if (isset($_GET['download'])) {
             <button type="submit" name="download">Download</button>
         </form>
         
-        <p>This page has been visited <?php echo file_get_contents('visit_count.txt'); ?> times.</p>
-        <p>This file has been downloaded <?php echo file_get_contents('download_count.txt'); ?> times.</p>
+        <?php if ($showStatistics): ?>
+            <p>This page has been visited <?php echo getVisitCount(); ?> times.</p>
+            <p>This file has been downloaded <?php echo getDownloadCount(); ?> times.</p>
+        <?php else: ?>
     </div>
 </body>
 </html>
